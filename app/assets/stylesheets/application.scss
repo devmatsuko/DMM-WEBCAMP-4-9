@@ -38,6 +38,10 @@ p {
   font-size: 13px;
 }
 
-.field, .actions{
+.field, .actions {
   margin-bottom: 10px;
+}
+
+#error_explanation {
+  color: red;
 }
