@@ -12,6 +12,11 @@ class ApplicationController < ActionController::Base
     user_path(resource)
   end
 
+  # サインアップ後はマイページへ遷移するようにルーティングを変更
+  def after_sign_out_path_for(resource)
+    root_path
+  end
+
   protected
 
   # サインアップ時、ログイン時にnameフィールドのデータ操作を許可する
