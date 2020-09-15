@@ -26,6 +26,7 @@ class BooksController < ApplicationController
     else
       @user = current_user
       @newbook = Book.new
+      @books = Book.all
       render :index
     end
   end
