@@ -1,17 +1,19 @@
 <div class="container">
     <div class="row">
-      <% if @book.errors.any? %>
-        <div id="error_explanation",class="error-message">
-          <h3><%= @book.errors.count %> errors prohibited this book from being saved:</h3>
-          <ul>
-            <% @book.errors.full_messages.each do |message| %>
-              <li><%= "Error:" + message %></li>
-            <% end %>
-          </ul>
-        </div>
+      <% unless @book.nil? %>
+        <% if @book.errors.any? %>
+          <div id="error_explanation",class="error-message">
+            <h3><%= @book.errors.count %> errors prohibited this book from being saved:</h3>
+            <ul>
+              <% @book.errors.full_messages.each do |message| %>
+                <li><%= "Error:" + message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
       <% end %>
-        <div class="col-xs-3">
-            <%= render 'users/profile', user: @user, newbook: @newbook %>
-        </div>
+      <div class="col-xs-3">
+          <%= render 'users/profile', user: @user, newbook: @newbook %>
+      </div>
     </div>
 </div>
