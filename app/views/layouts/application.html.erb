@@ -27,8 +27,8 @@
                 <li><%= link_to " logout", destroy_user_session_path, method: :delete, class:"glyphicon glyphicon-log-out" %></li>
               </ul>
             </nav>
-          <% else %>
           <!-- ログインしていない場合 -->
+          <% else %>
             <nav>
               <ul class="nav navbar-nav navbar-right">
                 <li><%= link_to " Home", root_path, class:"glyphicon glyphicon-home" %></li>
