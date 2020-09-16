@@ -5,10 +5,10 @@ class UsersController < ApplicationController
     @user = current_user
     @users = User.all
     @newbook = Book.new
-    @books = Book.all
   end
 
   def edit
+    @user = current_user
   end
 
   def show

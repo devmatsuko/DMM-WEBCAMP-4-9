@@ -3,5 +3,26 @@
         <div class="col-xs-3">
             <%= render 'users/profile', user: @user, newbook: @newbook %>
         </div>
+        <div class="col-xs-9">
+            <h2>Users</h2>
+            <table class="table">
+                <thead>
+                    <th>image</th>
+                    <th>name</th>
+                    <th colspan=1></th>
+                </thead>
+                <% unless @users.blank? %>
+                <% @users.each do |f| %>
+                    <tr>
+                        <td>
+                            <%= attachment_image_tag(f, :profile_image, :fill, size:'40x40', format: 'jpeg', fallback: "no_image.png") %>
+                        </td>
+                        <td><%= f.name %></td>
+                        <td><%= link_to "Show", user_path(f.id) %></td>
+                    </tr>
+                    <% end %>
+                  <% end %>
+            </table>
+        </div>
     </div>
 </div>
