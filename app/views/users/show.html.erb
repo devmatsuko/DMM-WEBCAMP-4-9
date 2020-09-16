@@ -1,4 +1,9 @@
 <div class="container">
+    <% if flash[:notice] %>
+        <div class="flash">
+            <p class="alert alert-success"><%= flash[:notice] %></p>
+        </div>
+    <% end %>
     <div class="row">
         <div class="col-xs-3">
             <%= render 'users/profile', user: @user, newbook: @newbook %>
@@ -15,7 +20,7 @@
                 <% @books.each do |f| %>
                     <tr>
                         <td>
-                            <%= link_to attachment_image_tag(f.user, :profile_image, :fill, size:'40x40', format: 'jpeg', fallback: "no_image.png"),user_path(f.user.id) %>
+                            <%= link_to attachment_image_tag(f.user, :profile_image, :fill, 40, 40, fallback: "no_image.png", size:"40x40"),user_path(f.user.id) %>
                         </td>
                         <td><%= link_to f.title, book_path(f.id) %></td>
                         <td><%= f.body %></td>

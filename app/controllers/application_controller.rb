@@ -18,9 +18,9 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  # サインアップ時、ログイン時にnameフィールドのデータ操作を許可する
+  # サインアップ時、ログイン時にnameフィールド、emailフィールドのデータ操作を許可する
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email])
     devise_parameter_sanitizer.permit(:sign_in, keys: [:name])
   end
 end
